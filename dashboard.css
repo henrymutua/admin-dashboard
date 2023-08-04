@@ -1,42 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 body{
     margin: 0;
     width: 100vw;
     height: 100vh;
     display: grid;
+    font-family: Roboto;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 4fr;
-
-    @media(max-width: 375px){
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 3r;
-
-    }
+    grid-template-areas: 
+        "nav nav-body"
+     
 }
 
 .navigation-bar{
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-area: nav;
     background-color: #0ea5e9;
-
-   
-
-    @media (max-width: 375px){
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-
 }
 
 .navigation-body{
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 6;
-
-    @media(max-width: 375px){
-        grid-column-start:2;
-        grid-column-end: 5;
-    }
+    grid-area: nav-body;
+    display: grid;
+    grid-template-rows: 1fr 0.1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    background-color: #e5e7eb;
+    grid-template-areas:
+        "top top top"
+        "titles titles titles"
+        "content-one content-two side"
+        "content-three content-four side"
+        "content-five content-six side"
 }
+
+.top-bar{
+    grid-area: top;
+    background-color: white;
+   
+
+}
+
+.titles{
+    grid-area: titles;
+    display: flex;
+    justify-content: space-between;
+    background-color: #e5e7eb;
+    padding-left: 1em;
+    font-weight: 450;
+    align-items: center;
+}
+
+.content-area-one{
+    grid-area: content-one;
+    background-color: white;
+    border-radius: 0.5em;
+    margin-left: 1em;
+ 
+}
+
+.content-area-two{
+    grid-area: content-two;
+    background-color: white;
+    border-radius: 0.5em;
+}
+
+.content-area-three{
+    grid-area:content-three;
+    background-color: white;
+    border-radius: 0.5em;
+    margin-left: 1em;
+}
+
+.content-area-four{
+    grid-area:content-four;
+    background-color: white;
+    border-radius: 0.5em;
+}
+
+.content-area-five{
+    grid-area:content-five;
+    background-color: white;
+    border-radius: 0.5em;
+    margin-left: 1em;
+}
+
+.content-area-six{
+    grid-area: content-six;
+    background-color: white;
+    border-radius: 0.5em;
+}
+
+.side-area{
+    grid-area: side;
+    display: grid;
+    grid-template-rows: 2fr 0.4fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "announcements-bar"
+        "sub-title"
+        "trending-bar"
+}
+
+.announcements-bar{
+    grid-area: announcements-bar;
+    background-color: white;
+    border-radius: 0.5em;
+}
+
+.sub-title{
+    grid-area: sub-title;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trending-bar{
+    grid-area: trending bar;
+    background-color: white;
+    border-radius: 0.5em;
+}
+
